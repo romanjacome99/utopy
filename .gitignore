@@ -1,0 +1,8 @@
+# Ignore data, CelebA2, wandb, figures, and results folders
+/data/
+/CelebA2/
+/wandb/
+/figures/
+/results/
+/run.py
+/plot.ipynb
