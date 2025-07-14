@@ -22,7 +22,7 @@ def compute_norm_per_batch(x):
 
 def main(args):
 
-    wandb.login(key='9036d5446bb747c3a72bb90cc6e7edebb2e8c4b4')
+    wandb.login(key='key-wandb')  # Replace with your actual WandB key
     set_seed(args.seed)
 
     
@@ -81,7 +81,7 @@ def main(args):
     def combined_loss(x_hat, x):
         return 0.8*l1_loss(x_hat, x) + 0.2*ssim_loss(x_hat,x) + 0.02*hf_loss(x_hat,x)
 
-    wandb.init(project="CAMSAP_UTOPY", name=exp_name, config=args, entity='roman2162474')
+    wandb.init(project="CAMSAP_UTOPY", name=exp_name, config=args, entity='entity')  # Replace 'entity' with your actual WandB entity
     path = f"./results/{exp_name}"
     os.makedirs(path, exist_ok=True)
     if args.number_batches == 0:
